@@ -1,0 +1,16 @@
+package org.example.friendfinder.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserMeResponseDTO {
+    private Long userId;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String profilePicture;
+}
