@@ -1,5 +1,6 @@
 package org.example.friendfinder.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -40,8 +41,12 @@ public class FriendRequest {
     private FriendRequestStatus status;
 
     @CreationTimestamp
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+
     private Instant createdAt;
 
     @UpdateTimestamp
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+
     private Instant updatedAt;
 }

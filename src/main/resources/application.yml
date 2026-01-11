@@ -42,8 +42,14 @@ app:
         expiration-days: ${JWT_REFRESH_EXP_DAYS:14}
 
   uploads:
+    # profile pictures
     profile-dir: ${UPLOAD_PROFILE_DIR:uploads/profile-pictures}
     profile-url-prefix: ${UPLOAD_PROFILE_URL_PREFIX:/uploads/profile-pictures}
+
+    # NEW: post media (images/videos)
+    post-dir: ${UPLOAD_POST_DIR:uploads/post-media}
+    post-url-prefix: ${UPLOAD_POST_URL_PREFIX:/uploads/post-media}
+
 
 springdoc:
   swagger-ui:

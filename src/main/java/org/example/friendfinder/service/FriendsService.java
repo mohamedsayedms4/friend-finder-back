@@ -294,4 +294,30 @@ public class FriendsService {
 
         return excluded;
     }
+
+
+    public boolean areFriends(Long a, Long b) {
+        if (a.equals(b)) return true;
+        return friendRequestRepository.existsAcceptedBetween(a, b);
+    }
+
+    public Set<Long> friendIds(Long meId) {
+        List<Long> ids = friendRequestRepository.findAcceptedFriendIds(meId, FriendRequestStatus.ACCEPTED);
+        return new HashSet<>(ids);
+    }
+
+
+
+
+
+    public List<User> listFriendsUsers(Long meId) {
+
+        List<Long> friendIds = friendRequestRepository.findFriendIds(meId);
+
+        if (friendIds.isEmpty()) {
+            return List.of();
+        }
+
+        return userRepository.findAllById(friendIds);
+    }
 }

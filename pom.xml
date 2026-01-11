@@ -91,6 +91,12 @@
             <version>${springdoc.version}</version>
         </dependency>
 
+        <!-- web websocket-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,5 +1,6 @@
 package org.example.friendfinder.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -43,6 +44,8 @@ public class User {
     private boolean enabled;
 
     @Column(nullable = false, updatable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+
     private Instant createdAt;
 
     @PrePersist
